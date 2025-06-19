@@ -1,0 +1,14 @@
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\bin\Debug\net9.0\CircleDeveloperControlledWalletSDK.deps.json
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\bin\Debug\net9.0\CircleDeveloperControlledWalletSDK.dll
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\bin\Debug\net9.0\CircleDeveloperControlledWalletSDK.pdb
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\bin\Debug\net9.0\CircleDeveloperControlledWalletSDK.xml
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\CircleDeveloperControlledWalletSDK.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\CircleDeveloperControlledWalletSDK.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\CircleDeveloperControlledWalletSDK.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\CircleDeveloperControlledWalletSDK.AssemblyInfo.cs
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\CircleDeveloperControlledWalletSDK.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\CircleDeveloperControlledWalletSDK.dll
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\refint\CircleDeveloperControlledWalletSDK.dll
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\CircleDeveloperControlledWalletSDK.xml
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\CircleDeveloperControlledWalletSDK.pdb
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\ref\CircleDeveloperControlledWalletSDK.dll

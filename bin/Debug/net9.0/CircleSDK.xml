@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CircleSDK</name>
+    </assembly>
+    <members>
+        <member name="M:CircleSDK.Services.WalletService.CreateWalletAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String,System.Int32,System.Collections.Generic.IEnumerable{CircleSDK.Models.WalletMetadata},System.String)">
+            <summary>
+            Creates one or more developer-controlled wallets within a wallet set.
+            </summary>
+            <param name="walletSetId">The ID of the wallet set.</param>
+            <param name="blockchains">List of blockchains for the wallets.</param>
+            <param name="entitySecret">Unencrypted Entity Secret for ciphertext generation.</param>
+            <param name="idempotencyKey">Optional UUIDv4 idempotency key; defaults to a new GUID.</param>
+            <param name="accountType">Account type (EOA or SCA); defaults to EOA.</param>
+            <param name="count">Number of wallets to create per blockchain; defaults to 1.</param>
+            <param name="metadata">Metadata for each wallet; count must match if provided.</param>
+            <param name="xRequestId">Optional request identifier for Circle Support.</param>
+            <returns>A <see cref="T:CircleSDK.Models.WalletsResponse"/> containing the created wallets.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when parameters are invalid.</exception>
+            <exception cref="T:CircleSDK.Exceptions.CircleApiException">Thrown when the API request fails.</exception>
+        </member>
+        <member name="M:CircleSDK.Services.WalletService.GetAllWalletsAsync(System.String,System.String,System.String,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of wallets based on specified filters.
+            </summary>
+            <param name="address">Optional blockchain address filter.</param>
+            <param name="blockchain">Optional blockchain filter.</param>
+            <param name="scaCore">Optional SCA version filter.</param>
+            <param name="walletSetId">Optional wallet set ID filter.</param>
+            <param name="refId">Optional reference ID filter.</param>
+            <param name="from">Optional start date for creation filter.</param>
+            <param name="to">Optional end date for creation filter.</param>
+            <param name="pageBefore">Optional pagination cursor for previous page.</param>
+            <param name="pageAfter">Optional pagination cursor for next page.</param>
+            <param name="pageSize">Optional number of items per page (1-50).</param>
+            <returns>A <see cref="T:CircleSDK.Models.WalletsResponse"/> containing the wallets.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when pagination parameters are invalid.</exception>
+            <exception cref="T:CircleSDK.Exceptions.CircleApiException">Thrown when the API request fails.</exception>
+        </member>
+        <member name="M:CircleSDK.Services.WalletService.GetWalletAsync(System.String,System.String)">
+            <summary>
+            Retrieves a specific wallet by its ID.
+            </summary>
+            <param name="id">The wallet ID.</param>
+            <param name="xRequestId">Optional request identifier for Circle Support.</param>
+            <returns>A <see cref="T:CircleSDK.Models.WalletResponse"/> containing the wallet details.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when ID is invalid.</exception>
+            <exception cref="T:CircleSDK.Exceptions.CircleApiException">Thrown when the API request fails.</exception>
+        </member>
+        <member name="M:CircleSDK.Services.WalletService.UpdateWalletAsync(System.String,System.String,System.String,System.String)">
+            <summary>
+            Updates the metadata of a specific wallet.
+            </summary>
+            <param name="id">The wallet ID.</param>
+            <param name="name">Optional new name for the wallet.</param>
+            <param name="refId">Optional new reference ID for the wallet.</param>
+            <param name="xRequestId">Optional request identifier for Circle Support.</param>
+            <returns>A <see cref="T:CircleSDK.Models.WalletResponse"/> containing the updated wallet details.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when ID is invalid or no updates provided.</exception>
+            <exception cref="T:CircleSDK.Exceptions.CircleApiException">Thrown when the API request fails.</exception>
+        </member>
+    </members>
+</doc>
