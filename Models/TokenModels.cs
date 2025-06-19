@@ -3,6 +3,9 @@ using System;
 
 namespace CircleDeveloperControlledWalletSDK.Models
 {
+    /// <summary>
+    /// Represents a response containing token information from the Circle API.
+    /// </summary>
     public class TokenResponse
     {
         [JsonProperty("id")]
@@ -36,6 +39,9 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public DateTime CreateDate { get; set; }
     }
 
+    /// <summary>
+    /// Wrapper class for token response data from the Circle API.
+    /// </summary>
     public class TokenResponseWrapper
     {
         [JsonProperty("data")]

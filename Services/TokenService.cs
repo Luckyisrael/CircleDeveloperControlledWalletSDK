@@ -7,10 +7,18 @@ using Newtonsoft.Json;
 
 namespace CircleDeveloperControlledWalletSDK.Services
 {
+    /// <summary>
+    /// Service for managing token-related operations and API calls.
+    /// </summary>
     public class TokenService
     {
         private readonly HttpClient _httpClient;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TokenService"/> class.
+        /// </summary>
+        /// <param name="httpClient">The HTTP client used for making API requests.</param>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="httpClient"/> is null.</exception>
         public TokenService(HttpClient httpClient)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
@@ -39,7 +47,6 @@ namespace CircleDeveloperControlledWalletSDK.Services
             var content = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<TokenResponseWrapper>(content).Data;
         }
-
         
         private static async Task HandleResponseAsync(HttpResponseMessage response)
         {

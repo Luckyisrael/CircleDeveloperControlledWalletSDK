@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace CircleDeveloperControlledWalletSDK.Models
 {
+    /// <summary>
+    /// Represents estimated transaction fee information including gas limits, prices and various fee components.
+    /// </summary>
     public class EstimatedFee
     {
         [JsonProperty("gasLimit")]
@@ -25,6 +28,9 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string NetworkFee { get; set; }
     }
 
+    /// <summary>
+    /// Represents the response containing estimated transaction fee information with different fee levels (high, medium, low) and gas limits.
+    /// </summary>
     public class EstimateFeeResponse
     {
         [JsonProperty("high")]
@@ -46,12 +52,18 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string PreVerificationGas { get; set; }
     }
 
+    /// <summary>
+    /// Represents a wrapper class for the EstimateFeeResponse that contains the transaction fee estimation data.
+    /// </summary>
     public class EstimateFeeResponseWrapper
     {
         [JsonProperty("data")]
         public EstimateFeeResponse Data { get; set; }
     }
 
+    /// <summary>
+    /// Represents a reason for transaction screening, including source information, risk scores, and categories.
+    /// </summary>
     public class ScreeningReason
     {
         [JsonProperty("source")]
@@ -70,6 +82,9 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string Type { get; set; }
     }
 
+    /// <summary>
+    /// Represents the evaluation results of a transaction screening, including rule name, actions taken, screening date and reasons.
+    /// </summary>
     public class TransactionScreeningEvaluation
     {
         [JsonProperty("ruleName")]
@@ -85,6 +100,9 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public List<ScreeningReason> Reasons { get; set; }
     }
 
+    /// <summary>
+    /// Represents a response containing transaction details including identifiers, amounts, blockchain information, fees, and status.
+    /// </summary>
     public class TransactionResponse
     {
         [JsonProperty("id")]
@@ -181,24 +199,36 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public TransactionScreeningEvaluation TransactionScreeningEvaluation { get; set; }
     }
 
+    /// <summary>
+    /// Represents a collection of transaction responses returned from the API.
+    /// </summary>
     public class TransactionsResponse
     {
         [JsonProperty("transactions")]
         public List<TransactionResponse> Transactions { get; set; }
     }
 
+    /// <summary>
+    /// Represents a wrapper class for the TransactionsResponse that contains a collection of transaction data.
+    /// </summary>
     public class TransactionsResponseWrapper
     {
         [JsonProperty("data")]
         public TransactionsResponse Data { get; set; }
     }
 
+    /// <summary>
+    /// Represents a wrapper class for the TransactionResponse that contains a single transaction's data.
+    /// </summary>
     public class TransactionResponseWrapper
     {
         [JsonProperty("data")]
         public TransactionResponse Data { get; set; }
     }
 
+    /// <summary>
+    /// Represents a request to create a new transfer transaction, including wallet details, destination, amounts and fee settings.
+    /// </summary>
     public class CreateTransferRequest
     {
         [JsonProperty("walletId")]
@@ -247,6 +277,9 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string Blockchain { get; set; }
     }
 
+    /// <summary>
+    /// Represents a response from creating a transfer transaction, containing the transaction ID and state.
+    /// </summary>
     public class CreateTransferResponse
     {
         [JsonProperty("id")]
@@ -256,12 +289,18 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string State { get; set; }
     }
 
+    /// <summary>
+    /// Represents a wrapper class for the CreateTransferResponse that contains the transfer transaction creation data.
+    /// </summary>
     public class CreateTransferResponseWrapper
     {
         [JsonProperty("data")]
         public CreateTransferResponse Data { get; set; }
     }
 
+    /// <summary>
+    /// Represents a request to validate a blockchain address, containing the blockchain type and address to validate.
+    /// </summary>
     public class ValidateAddressRequest
     {
         [JsonProperty("blockchain")]
@@ -271,18 +310,27 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string Address { get; set; }
     }
 
+    /// <summary>
+    /// Represents a response from validating a blockchain address, containing a boolean indicating if the address is valid.
+    /// </summary>
     public class ValidateAddressResponse
     {
         [JsonProperty("isValid")]
         public bool IsValid { get; set; }
     }
 
+    /// <summary>
+    /// Represents a wrapper class for the ValidateAddressResponse that contains the address validation result.
+    /// </summary>
     public class ValidateAddressResponseWrapper
     {
         [JsonProperty("data")]
         public ValidateAddressResponse Data { get; set; }
     }
 
+    /// <summary>
+    /// Represents a request to estimate the fee for executing a smart contract, including contract details, blockchain information, and execution parameters.
+    /// </summary>
     public class EstimateContractExecutionFeeRequest
     {
         [JsonProperty("contractAddress")]
@@ -310,6 +358,9 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string Amount { get; set; }
     }
 
+    /// <summary>
+    /// Represents a request to estimate the fee for a transfer transaction, including destination address, amounts, and blockchain details.
+    /// </summary>
     public class EstimateTransferFeeRequest
     {
         [JsonProperty("destinationAddress")]
@@ -337,6 +388,9 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string WalletId { get; set; }
     }
 
+    /// <summary>
+    /// Represents a request to execute a smart contract, including wallet details, contract information, and execution parameters.
+    /// </summary>
     public class CreateContractExecutionRequest
     {
         [JsonProperty("walletId")]
@@ -382,6 +436,9 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string RefId { get; set; }
     }
 
+    /// <summary>
+    /// Represents a response from executing a smart contract, containing the transaction ID and state.
+    /// </summary>
     public class CreateContractExecutionResponse
     {
         [JsonProperty("id")]
@@ -391,12 +448,18 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string State { get; set; }
     }
 
+    /// <summary>
+    /// Represents a wrapper class for the CreateContractExecutionResponse that contains the contract execution result data.
+    /// </summary>
     public class CreateContractExecutionResponseWrapper
     {
         [JsonProperty("data")]
         public CreateContractExecutionResponse Data { get; set; }
     }
 
+    /// <summary>
+    /// Represents a request to upgrade a wallet, including wallet ID, security parameters, and fee settings.
+    /// </summary>
     public class CreateWalletUpgradeRequest
     {
         [JsonProperty("walletId")]
@@ -430,6 +493,9 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string RefId { get; set; }
     }
 
+    /// <summary>
+    /// Represents a response from upgrading a wallet, containing the transaction ID and state.
+    /// </summary>
     public class CreateWalletUpgradeResponse
     {
         [JsonProperty("id")]
@@ -439,12 +505,18 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string State { get; set; }
     }
 
+    /// <summary>
+    /// Represents a wrapper class for the CreateWalletUpgradeResponse that contains the wallet upgrade result data.
+    /// </summary>
     public class CreateWalletUpgradeResponseWrapper
     {
         [JsonProperty("data")]
         public CreateWalletUpgradeResponse Data { get; set; }
     }
 
+    /// <summary>
+    /// Represents a request to cancel a pending transaction, including security parameters and idempotency key.
+    /// </summary>
     public class CancelTransactionRequest
     {
         [JsonProperty("entitySecretCiphertext")]
@@ -454,6 +526,9 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string IdempotencyKey { get; set; }
     }
 
+    /// <summary>
+    /// Represents a response from canceling a transaction, containing the transaction ID and state.
+    /// </summary>
     public class CancelTransactionResponse
     {
         [JsonProperty("id")]
@@ -463,12 +538,18 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string State { get; set; }
     }
 
+    /// <summary>
+    /// Represents a wrapper class for the CancelTransactionResponse that contains the transaction cancellation result data.
+    /// </summary>
     public class CancelTransactionResponseWrapper
     {
         [JsonProperty("data")]
         public CancelTransactionResponse Data { get; set; }
     }
 
+    /// <summary>
+    /// Represents a request to accelerate a pending transaction by increasing its gas fee, including security parameters and idempotency key.
+    /// </summary>
     public class AccelerateTransactionRequest
     {
         [JsonProperty("entitySecretCiphertext")]
@@ -478,12 +559,18 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public string IdempotencyKey { get; set; }
     }
 
+    /// <summary>
+    /// Represents a response from accelerating a transaction, containing the transaction ID.
+    /// </summary>
     public class AccelerateTransactionResponse
     {
         [JsonProperty("id")]
         public string Id { get; set; }
     }
 
+    /// <summary>
+    /// Represents a wrapper class for the AccelerateTransactionResponse that contains the transaction acceleration result data.
+    /// </summary>
     public class AccelerateTransactionResponseWrapper
     {
         [JsonProperty("data")]

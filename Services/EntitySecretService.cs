@@ -10,27 +10,55 @@ using Newtonsoft.Json;
 
 namespace CircleDeveloperControlledWalletSDK.Services
 {
+    /// <summary>
+    /// Service for managing entity secrets, including generation, encryption, and registration with Circle's API.
+    /// </summary>
     public class EntitySecretService
     {
         private readonly HttpClient _httpClient;
         private readonly CryptoUtils _cryptoUtils;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EntitySecretService"/> class.
+        /// </summary>
+        /// <param name="httpClient">The HTTP client used for making API requests.</param>
+        /// <param name="cryptoUtils">The cryptographic utilities for entity secret operations.</param>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="httpClient"/> or <paramref name="cryptoUtils"/> is null.</exception>
         public EntitySecretService(HttpClient httpClient, CryptoUtils cryptoUtils)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             _cryptoUtils = cryptoUtils ?? throw new ArgumentNullException(nameof(cryptoUtils));
         }
 
+        /// <summary>
+        /// Generates a new entity secret using cryptographic utilities.
+        /// </summary>
+        /// <returns>A 32-byte hex string representing the generated entity secret.</returns>
         public string GenerateEntitySecret()
         {
             return _cryptoUtils.GenerateEntitySecret();
         }
 
+        /// <summary>
+        /// Generates an encrypted ciphertext from the provided entity secret.
+        /// </summary>
+        /// <param name="entitySecret">The entity secret to encrypt.</param>
+        /// <returns>A Task that represents the asynchronous operation. The task result contains the encrypted ciphertext as a string.</returns>
         public async Task<string> GenerateEntitySecretCiphertextAsync(string entitySecret)
         {
             return await _cryptoUtils.GenerateEntitySecretCiphertextAsync(entitySecret);
         }
 
+        /// <summary>
+        /// Registers an entity secret with Circle's API and optionally saves recovery information to a file.
+        /// </summary>
+        /// <param name="entitySecret">The entity secret to register, must be a 32-byte hex string.</param>
+        /// <param name="recoveryFilePath">Optional. The file path where recovery information will be saved.</param>
+        /// <returns>A Task that represents the asynchronous operation. The task result contains the registration response from Circle's API.</returns>
+        /// <exception cref="ArgumentNullException">Thrown when entitySecret is null or empty.</exception>
+        /// <exception cref="ArgumentException">Thrown when entitySecret is not a valid 32-byte hex string or when recoveryFilePath is invalid.</exception>
+        /// <exception cref="IOException">Thrown when there is an error writing to the recovery file.</exception>
+        /// <exception cref="CircleApiException">Thrown when the API request fails.</exception>
         public async Task<RegisterEntitySecretResponse> RegisterEntitySecretAsync(string entitySecret, string recoveryFilePath = null)
         {
             if (string.IsNullOrEmpty(entitySecret))
@@ -81,7 +109,7 @@ namespace CircleDeveloperControlledWalletSDK.Services
             return registerResponse;
         }
 
-        private async Task HandleResponseAsync(HttpResponseMessage response)
+        private static async Task HandleResponseAsync(HttpResponseMessage response)
         {
             if (!response.IsSuccessStatusCode)
             {

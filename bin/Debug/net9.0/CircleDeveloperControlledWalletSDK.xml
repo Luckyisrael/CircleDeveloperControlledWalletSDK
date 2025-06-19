@@ -54,6 +54,161 @@
             Represents an error response from the Circle API.
             </summary>
         </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.TokenResponse">
+            <summary>
+            Represents a response containing token information from the Circle API.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.TokenResponseWrapper">
+            <summary>
+            Wrapper class for token response data from the Circle API.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.EstimatedFee">
+            <summary>
+            Represents estimated transaction fee information including gas limits, prices and various fee components.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.EstimateFeeResponse">
+            <summary>
+            Represents the response containing estimated transaction fee information with different fee levels (high, medium, low) and gas limits.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.EstimateFeeResponseWrapper">
+            <summary>
+            Represents a wrapper class for the EstimateFeeResponse that contains the transaction fee estimation data.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.ScreeningReason">
+            <summary>
+            Represents a reason for transaction screening, including source information, risk scores, and categories.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.TransactionScreeningEvaluation">
+            <summary>
+            Represents the evaluation results of a transaction screening, including rule name, actions taken, screening date and reasons.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.TransactionResponse">
+            <summary>
+            Represents a response containing transaction details including identifiers, amounts, blockchain information, fees, and status.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.TransactionsResponse">
+            <summary>
+            Represents a collection of transaction responses returned from the API.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.TransactionsResponseWrapper">
+            <summary>
+            Represents a wrapper class for the TransactionsResponse that contains a collection of transaction data.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.TransactionResponseWrapper">
+            <summary>
+            Represents a wrapper class for the TransactionResponse that contains a single transaction's data.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CreateTransferRequest">
+            <summary>
+            Represents a request to create a new transfer transaction, including wallet details, destination, amounts and fee settings.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CreateTransferResponse">
+            <summary>
+            Represents a response from creating a transfer transaction, containing the transaction ID and state.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CreateTransferResponseWrapper">
+            <summary>
+            Represents a wrapper class for the CreateTransferResponse that contains the transfer transaction creation data.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.ValidateAddressRequest">
+            <summary>
+            Represents a request to validate a blockchain address, containing the blockchain type and address to validate.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.ValidateAddressResponse">
+            <summary>
+            Represents a response from validating a blockchain address, containing a boolean indicating if the address is valid.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.ValidateAddressResponseWrapper">
+            <summary>
+            Represents a wrapper class for the ValidateAddressResponse that contains the address validation result.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.EstimateContractExecutionFeeRequest">
+            <summary>
+            Represents a request to estimate the fee for executing a smart contract, including contract details, blockchain information, and execution parameters.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.EstimateTransferFeeRequest">
+            <summary>
+            Represents a request to estimate the fee for a transfer transaction, including destination address, amounts, and blockchain details.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CreateContractExecutionRequest">
+            <summary>
+            Represents a request to execute a smart contract, including wallet details, contract information, and execution parameters.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CreateContractExecutionResponse">
+            <summary>
+            Represents a response from executing a smart contract, containing the transaction ID and state.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CreateContractExecutionResponseWrapper">
+            <summary>
+            Represents a wrapper class for the CreateContractExecutionResponse that contains the contract execution result data.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CreateWalletUpgradeRequest">
+            <summary>
+            Represents a request to upgrade a wallet, including wallet ID, security parameters, and fee settings.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CreateWalletUpgradeResponse">
+            <summary>
+            Represents a response from upgrading a wallet, containing the transaction ID and state.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CreateWalletUpgradeResponseWrapper">
+            <summary>
+            Represents a wrapper class for the CreateWalletUpgradeResponse that contains the wallet upgrade result data.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CancelTransactionRequest">
+            <summary>
+            Represents a request to cancel a pending transaction, including security parameters and idempotency key.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CancelTransactionResponse">
+            <summary>
+            Represents a response from canceling a transaction, containing the transaction ID and state.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.CancelTransactionResponseWrapper">
+            <summary>
+            Represents a wrapper class for the CancelTransactionResponse that contains the transaction cancellation result data.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.AccelerateTransactionRequest">
+            <summary>
+            Represents a request to accelerate a pending transaction by increasing its gas fee, including security parameters and idempotency key.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.AccelerateTransactionResponse">
+            <summary>
+            Represents a response from accelerating a transaction, containing the transaction ID.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.AccelerateTransactionResponseWrapper">
+            <summary>
+            Represents a wrapper class for the AccelerateTransactionResponse that contains the transaction acceleration result data.
+            </summary>
+        </member>
         <member name="T:CircleDeveloperControlledWalletSDK.Models.CreateWalletRequest">
             <summary>
             Represents a request to create a new wallet.
@@ -214,6 +369,66 @@
             Represents a response containing a collection of wallet sets.
             </summary>
         </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.WalletSetResponseWrapper">
+            <summary>
+            Represents a wrapper class for the wallet set response data.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Models.WalletSetsResponseWrapper">
+            <summary>
+            Represents a wrapper class for the wallet sets response data.
+            </summary>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Services.EntitySecretService">
+            <summary>
+            Service for managing entity secrets, including generation, encryption, and registration with Circle's API.
+            </summary>
+        </member>
+        <member name="M:CircleDeveloperControlledWalletSDK.Services.EntitySecretService.#ctor(System.Net.Http.HttpClient,CircleDeveloperControlledWalletSDK.Utilities.CryptoUtils)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CircleDeveloperControlledWalletSDK.Services.EntitySecretService"/> class.
+            </summary>
+            <param name="httpClient">The HTTP client used for making API requests.</param>
+            <param name="cryptoUtils">The cryptographic utilities for entity secret operations.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="httpClient"/> or <paramref name="cryptoUtils"/> is null.</exception>
+        </member>
+        <member name="M:CircleDeveloperControlledWalletSDK.Services.EntitySecretService.GenerateEntitySecret">
+            <summary>
+            Generates a new entity secret using cryptographic utilities.
+            </summary>
+            <returns>A 32-byte hex string representing the generated entity secret.</returns>
+        </member>
+        <member name="M:CircleDeveloperControlledWalletSDK.Services.EntitySecretService.GenerateEntitySecretCiphertextAsync(System.String)">
+            <summary>
+            Generates an encrypted ciphertext from the provided entity secret.
+            </summary>
+            <param name="entitySecret">The entity secret to encrypt.</param>
+            <returns>A Task that represents the asynchronous operation. The task result contains the encrypted ciphertext as a string.</returns>
+        </member>
+        <member name="M:CircleDeveloperControlledWalletSDK.Services.EntitySecretService.RegisterEntitySecretAsync(System.String,System.String)">
+            <summary>
+            Registers an entity secret with Circle's API and optionally saves recovery information to a file.
+            </summary>
+            <param name="entitySecret">The entity secret to register, must be a 32-byte hex string.</param>
+            <param name="recoveryFilePath">Optional. The file path where recovery information will be saved.</param>
+            <returns>A Task that represents the asynchronous operation. The task result contains the registration response from Circle's API.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when entitySecret is null or empty.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when entitySecret is not a valid 32-byte hex string or when recoveryFilePath is invalid.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when there is an error writing to the recovery file.</exception>
+            <exception cref="T:CircleDeveloperControlledWalletSDK.Exceptions.CircleApiException">Thrown when the API request fails.</exception>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Services.TokenService">
+            <summary>
+            Service for managing token-related operations and API calls.
+            </summary>
+        </member>
+        <member name="M:CircleDeveloperControlledWalletSDK.Services.TokenService.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CircleDeveloperControlledWalletSDK.Services.TokenService"/> class.
+            </summary>
+            <param name="httpClient">The HTTP client used for making API requests.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="httpClient"/> is null.</exception>
+        </member>
         <member name="M:CircleDeveloperControlledWalletSDK.Services.TokenService.GetTokenDetailsAsync(System.String,System.String)">
             <summary>
             Fetches details of a specific token by its ID.
@@ -223,6 +438,21 @@
             <returns>A <see cref="T:CircleDeveloperControlledWalletSDK.Models.TokenResponse"/> containing the token details.</returns>
             <exception cref="T:System.ArgumentException">Thrown when the token ID is invalid.</exception>
             <exception cref="T:CircleDeveloperControlledWalletSDK.Exceptions.CircleApiException">Thrown when the API request fails.</exception>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Services.TransactionService">
+            <summary>
+            Provides functionality for managing blockchain transactions through the Circle API.
+            This includes listing transactions, getting transaction details, creating transfers,
+            validating addresses, and estimating contract execution fees.
+            </summary>
+        </member>
+        <member name="M:CircleDeveloperControlledWalletSDK.Services.TransactionService.#ctor(System.Net.Http.HttpClient,CircleDeveloperControlledWalletSDK.Utilities.CryptoUtils)">
+            <summary>
+            Initializes a new instance of the TransactionService class.
+            </summary>
+            <param name="httpClient">The HTTP client used to make API requests.</param>
+            <param name="cryptoUtils">Utility class for cryptographic operations.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when httpClient or cryptoUtils is null.</exception>
         </member>
         <member name="M:CircleDeveloperControlledWalletSDK.Services.TransactionService.ListTransactionsAsync(System.String,System.String,System.String,System.Nullable{System.Boolean},System.String,System.String,System.String,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.String,System.Nullable{System.Int32},System.String)">
             <summary>
@@ -622,6 +852,34 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation, containing the updated wallet set response.</returns>
             <exception cref="T:System.ArgumentException">Thrown when id or name is null or empty.</exception>
             <exception cref="T:CircleDeveloperControlledWalletSDK.Exceptions.CircleApiException">Thrown when the API request fails.</exception>
+        </member>
+        <member name="T:CircleDeveloperControlledWalletSDK.Utilities.CryptoUtils">
+            <summary>
+            Provides cryptographic utility functions for entity secret generation, encryption, and validation.
+            </summary>
+        </member>
+        <member name="M:CircleDeveloperControlledWalletSDK.Utilities.CryptoUtils.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CircleDeveloperControlledWalletSDK.Utilities.CryptoUtils"/> class.
+            </summary>
+            <param name="httpClient">The HTTP client used for making API requests.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="httpClient"/> is null.</exception>
+        </member>
+        <member name="M:CircleDeveloperControlledWalletSDK.Utilities.CryptoUtils.GenerateEntitySecret">
+            <summary>
+            Generates a random 32-byte entity secret as a lowercase hexadecimal string.
+            </summary>
+            <returns>A 64-character lowercase hexadecimal string representing the entity secret.</returns>
+        </member>
+        <member name="M:CircleDeveloperControlledWalletSDK.Utilities.CryptoUtils.GenerateEntitySecretCiphertextAsync(System.String)">
+            <summary>
+            Encrypts an entity secret using Circle's public key.
+            </summary>
+            <param name="entitySecret">A 32-byte hex string (64 characters) representing the entity secret to encrypt.</param>
+            <returns>A base64-encoded string containing the encrypted entity secret.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when entitySecret is null or empty.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when entitySecret is not a valid 32-byte hex string.</exception>
+            <exception cref="T:System.Security.Cryptography.CryptographicException">Thrown when encryption fails or Circle's public key cannot be retrieved or imported.</exception>
         </member>
     </members>
 </doc>

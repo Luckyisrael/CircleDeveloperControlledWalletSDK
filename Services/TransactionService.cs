@@ -11,11 +11,22 @@ using Newtonsoft.Json;
 
 namespace CircleDeveloperControlledWalletSDK.Services
 {
+    /// <summary>
+    /// Provides functionality for managing blockchain transactions through the Circle API.
+    /// This includes listing transactions, getting transaction details, creating transfers,
+    /// validating addresses, and estimating contract execution fees.
+    /// </summary>
     public class TransactionService
     {
         private readonly HttpClient _httpClient;
         private readonly CryptoUtils _cryptoUtils;
 
+        /// <summary>
+        /// Initializes a new instance of the TransactionService class.
+        /// </summary>
+        /// <param name="httpClient">The HTTP client used to make API requests.</param>
+        /// <param name="cryptoUtils">Utility class for cryptographic operations.</param>
+        /// <exception cref="ArgumentNullException">Thrown when httpClient or cryptoUtils is null.</exception>
         public TransactionService(HttpClient httpClient, CryptoUtils cryptoUtils)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));

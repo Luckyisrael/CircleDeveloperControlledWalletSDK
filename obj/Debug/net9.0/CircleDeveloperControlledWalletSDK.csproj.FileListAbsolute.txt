@@ -12,3 +12,4 @@ C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\n
 C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\CircleDeveloperControlledWalletSDK.xml
 C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\CircleDeveloperControlledWalletSDK.pdb
 C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\ref\CircleDeveloperControlledWalletSDK.dll
+C:\Users\user\OneDrive\Documents\Desktop\Apps\CircleClient\CircleSDK\obj\Debug\net9.0\CircleDeveloperControlledWalletSDK.sourcelink.json

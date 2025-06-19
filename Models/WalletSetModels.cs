@@ -58,12 +58,18 @@ namespace CircleDeveloperControlledWalletSDK.Models
         public List<WalletSetResponse> WalletSets { get; set; }
     }
 
+    /// <summary>
+    /// Represents a wrapper class for the wallet set response data.
+    /// </summary>
     public class WalletSetResponseWrapper
     {
         [JsonProperty("data")]
         public WalletSetResponse Data { get; set; }
     }
 
+    /// <summary>
+    /// Represents a wrapper class for the wallet sets response data.
+    /// </summary>
     public class WalletSetsResponseWrapper
     {
         [JsonProperty("data")]
