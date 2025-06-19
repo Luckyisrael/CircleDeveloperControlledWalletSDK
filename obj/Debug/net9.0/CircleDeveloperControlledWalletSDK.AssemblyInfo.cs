@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute(("A minimal C# SDK for Circle\'s Developer-Controlled Wallets API, supporting wallet" +
     " set operations and Entity Secret management."))]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45405d3499aafb78679dc9d391d541a6a5a2bc3a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+309b538028156b02d0a73c7eb091fc72156fecec")]
 [assembly: System.Reflection.AssemblyProductAttribute("CircleDeveloperControlledWalletSDK")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CircleDeveloperControlledWalletSDK")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

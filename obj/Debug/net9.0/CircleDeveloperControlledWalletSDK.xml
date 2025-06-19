@@ -4,6 +4,13 @@
         <name>CircleDeveloperControlledWalletSDK</name>
     </assembly>
     <members>
+        <member name="M:CircleDeveloperControlledWalletSDK.CircleClient.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the CircleClient class.
+            </summary>
+            <param name="apiKey">The API key used to authenticate requests to the Circle API.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when apiKey is null or empty.</exception>
+        </member>
         <member name="T:CircleDeveloperControlledWalletSDK.Exceptions.CircleApiException">
             <summary>
             Exception thrown when Circle API returns an error response.
@@ -802,7 +809,7 @@
             Provides functionality to create, retrieve, and update wallet sets.
             </summary>
         </member>
-        <member name="M:CircleDeveloperControlledWalletSDK.Services.WalletSetService.#ctor(System.Net.Http.HttpClient)">
+        <member name="M:CircleDeveloperControlledWalletSDK.Services.WalletSetService.#ctor(System.Net.Http.HttpClient,CircleDeveloperControlledWalletSDK.Utilities.CryptoUtils)">
             <summary>
             Initializes a new instance of the <see cref="T:CircleDeveloperControlledWalletSDK.Services.WalletSetService"/> class.
             </summary>
@@ -811,13 +818,16 @@
         </member>
         <member name="M:CircleDeveloperControlledWalletSDK.Services.WalletSetService.CreateWalletSetAsync(System.String,System.String,System.String)">
             <summary>
-            Creates a new wallet set asynchronously.
+            Creates a new developer-controlled wallet set.
             </summary>
-            <param name="name">The name of the wallet set.</param>
-            <param name="entitySecret">A 32-byte hex string (64 characters) used as the entity secret.</param>
-            <param name="xRequestId">Optional request ID for tracking the request.</param>
-            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation, containing the created wallet set response.</returns>
-            <exception cref="T:System.ArgumentException">Thrown when name is null or empty, or when entitySecret is invalid.</exception>
+            <param name="name">Name or description of the wallet set.</param>
+            <param name="entitySecret">Unencrypted Entity Secret (hex string).</param>
+            <param name="xRequestId">Optional request ID for tracking with Circle Support.</param>
+            <returns>A <see cref="T:CircleDeveloperControlledWalletSDK.Models.WalletSetResponse"/> containing the created wallet set details.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when required parameters are null or empty.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="entitySecret"/> is invalid.</exception>
+            <exception cref="T:CircleDeveloperControlledWalletSDK.Exceptions.CircleApiException">Thrown when the API request fails.</exception>
+            <remarks>Requires a unique Entity Secret ciphertext, generated internally.</remarks>
         </member>
         <member name="M:CircleDeveloperControlledWalletSDK.Services.WalletSetService.GetAllWalletSetsAsync(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.String,System.Nullable{System.Int32},System.String)">
             <summary>
@@ -870,16 +880,36 @@
             Generates a random 32-byte entity secret as a lowercase hexadecimal string.
             </summary>
             <returns>A 64-character lowercase hexadecimal string representing the entity secret.</returns>
+            <exception cref="T:System.Security.Cryptography.CryptographicException">Thrown when entity secret generation fails.</exception>
         </member>
         <member name="M:CircleDeveloperControlledWalletSDK.Utilities.CryptoUtils.GenerateEntitySecretCiphertextAsync(System.String)">
             <summary>
-            Encrypts an entity secret using Circle's public key.
+            Generates a Base64-encoded Entity Secret ciphertext using Circle's public key.
             </summary>
-            <param name="entitySecret">A 32-byte hex string (64 characters) representing the entity secret to encrypt.</param>
-            <returns>A base64-encoded string containing the encrypted entity secret.</returns>
-            <exception cref="T:System.ArgumentNullException">Thrown when entitySecret is null or empty.</exception>
-            <exception cref="T:System.ArgumentException">Thrown when entitySecret is not a valid 32-byte hex string.</exception>
-            <exception cref="T:System.Security.Cryptography.CryptographicException">Thrown when encryption fails or Circle's public key cannot be retrieved or imported.</exception>
+            <param name="entitySecret">Unencrypted Entity Secret (64-character hex string).</param>
+            <returns>A Base64-encoded ciphertext (684 characters).</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="entitySecret"/> is null or empty.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="entitySecret"/> is not a valid 32-byte hex string.</exception>
+            <exception cref="T:CircleDeveloperControlledWalletSDK.Exceptions.CircleApiException">Thrown when the public key retrieval fails.</exception>
+            <exception cref="T:System.Security.Cryptography.CryptographicException">Thrown when RSA encryption fails.</exception>
+            <remarks>
+            Fetches Circle's RSA public key from GET /v1/w3s/config/entity/publicKey and encrypts the Entity Secret
+            using RSA with OAEP-SHA256 padding. The resulting ciphertext is unique per request, as required by Circle.
+            </remarks>
+        </member>
+        <member name="M:CircleDeveloperControlledWalletSDK.Utilities.CryptoUtils.IsHexString(System.String)">
+            <summary>
+            Determines whether a string contains only valid hexadecimal characters (0-9, a-f, A-F).
+            </summary>
+            <param name="value">The string to validate.</param>
+            <returns>true if the string contains only valid hexadecimal characters; otherwise, false.</returns>
+        </member>
+        <member name="M:CircleDeveloperControlledWalletSDK.Utilities.CryptoUtils.IsValidFilePath(System.String)">
+            <summary>
+            Validates whether a given string represents a valid file path.
+            </summary>
+            <param name="path">The file path to validate.</param>
+            <returns>true if the path is valid; otherwise, false.</returns>
         </member>
     </members>
 </doc>

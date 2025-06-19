@@ -60,11 +60,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\OneDrive\\Documents\\Desktop\\Apps\\CircleClient\\CircleSDK\\CircleDeveloperControlledWalletSDK.csproj",
+      "projectUniqueName": "C:\\Users\\user\\OneDrive\\Documents\\Desktop\\Apps\\CircleClient\\CircleDeveloperControlledWalletSDK\\CircleDeveloperControlledWalletSDK.csproj",
       "projectName": "CircleDeveloperControlledWalletSDK",
-      "projectPath": "C:\\Users\\user\\OneDrive\\Documents\\Desktop\\Apps\\CircleClient\\CircleSDK\\CircleDeveloperControlledWalletSDK.csproj",
+      "projectPath": "C:\\Users\\user\\OneDrive\\Documents\\Desktop\\Apps\\CircleClient\\CircleDeveloperControlledWalletSDK\\CircleDeveloperControlledWalletSDK.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\OneDrive\\Documents\\Desktop\\Apps\\CircleClient\\CircleSDK\\obj\\",
+      "outputPath": "C:\\Users\\user\\OneDrive\\Documents\\Desktop\\Apps\\CircleClient\\CircleDeveloperControlledWalletSDK\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"

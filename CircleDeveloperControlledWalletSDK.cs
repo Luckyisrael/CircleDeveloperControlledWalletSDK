@@ -19,6 +19,11 @@ namespace CircleDeveloperControlledWalletSDK
 
         private const string BaseUrl = "https://api.circle.com/v1/w3s/";
 
+        /// <summary>
+        /// Initializes a new instance of the CircleClient class.
+        /// </summary>
+        /// <param name="apiKey">The API key used to authenticate requests to the Circle API.</param>
+        /// <exception cref="ArgumentNullException">Thrown when apiKey is null or empty.</exception>
         public CircleClient(string apiKey)
         {
             if (string.IsNullOrEmpty(apiKey))
@@ -29,7 +34,7 @@ namespace CircleDeveloperControlledWalletSDK
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             var cryptoUtils = new CryptoUtils(_httpClient);
-            WalletSets = new WalletSetService(_httpClient);
+            WalletSets = new WalletSetService(_httpClient,cryptoUtils);
             Wallets = new WalletService(_httpClient, cryptoUtils);
             EntitySecrets = new EntitySecretService(_httpClient, cryptoUtils);
             Transactions = new TransactionService(_httpClient, cryptoUtils);

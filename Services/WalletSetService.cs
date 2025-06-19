@@ -18,32 +18,38 @@ namespace CircleDeveloperControlledWalletSDK.Services
     public class WalletSetService
     {
         private readonly HttpClient _httpClient;
+        private readonly CryptoUtils _cryptoUtils;
         /// <summary>
         /// Initializes a new instance of the <see cref="WalletSetService"/> class.
         /// </summary>
         /// <param name="httpClient">The HTTP client used to make API requests.</param>
         /// <exception cref="ArgumentNullException">Thrown when <paramref name="httpClient"/> is null.</exception>
-        public WalletSetService(HttpClient httpClient)
+        public WalletSetService(HttpClient httpClient, CryptoUtils cryptoUtils)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            _cryptoUtils = cryptoUtils ?? throw new ArgumentNullException(nameof(cryptoUtils));
         }
 
         /// <summary>
-        /// Creates a new wallet set asynchronously.
+        /// Creates a new developer-controlled wallet set.
         /// </summary>
-        /// <param name="name">The name of the wallet set.</param>
-        /// <param name="entitySecret">A 32-byte hex string (64 characters) used as the entity secret.</param>
-        /// <param name="xRequestId">Optional request ID for tracking the request.</param>
-        /// <returns>A <see cref="Task{WalletSetResponse}"/> representing the asynchronous operation, containing the created wallet set response.</returns>
-        /// <exception cref="ArgumentException">Thrown when name is null or empty, or when entitySecret is invalid.</exception>
+        /// <param name="name">Name or description of the wallet set.</param>
+        /// <param name="entitySecret">Unencrypted Entity Secret (hex string).</param>
+        /// <param name="xRequestId">Optional request ID for tracking with Circle Support.</param>
+        /// <returns>A <see cref="WalletSetResponse"/> containing the created wallet set details.</returns>
+        /// <exception cref="ArgumentNullException">Thrown when required parameters are null or empty.</exception>
+        /// <exception cref="ArgumentException">Thrown when <paramref name="entitySecret"/> is invalid.</exception>
+        /// <exception cref="CircleApiException">Thrown when the API request fails.</exception>
+        /// <remarks>Requires a unique Entity Secret ciphertext, generated internally.</remarks>
         public async Task<WalletSetResponse> CreateWalletSetAsync(string name, string entitySecret, string xRequestId = null)
         {
-            if (string.IsNullOrEmpty(name)) throw new ArgumentException("Name cannot be null or empty.", nameof(name));
-            if (string.IsNullOrEmpty(entitySecret) || entitySecret.Length != 64 || !CryptoUtils.IsHexString(entitySecret))
+            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException(nameof(name));
+            if (string.IsNullOrEmpty(entitySecret)) throw new ArgumentNullException(nameof(entitySecret));
+            if (entitySecret.Length != 64 || !CryptoUtils.IsHexString(entitySecret))
                 throw new ArgumentException("Entity Secret must be a 32-byte hex string (64 characters).", nameof(entitySecret));
 
             var idempotencyKey = Guid.NewGuid().ToString();
-            var entitySecretCiphertext = await new CryptoUtils(_httpClient).GenerateEntitySecretCiphertextAsync(entitySecret);
+            var entitySecretCiphertext = await _cryptoUtils.GenerateEntitySecretCiphertextAsync(entitySecret);
 
             var request = new CreateWalletSetRequest
             {
