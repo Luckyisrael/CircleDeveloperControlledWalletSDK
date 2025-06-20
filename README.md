@@ -1,6 +1,6 @@
 # CircleDeveloperControlledWalletSDK
 
-A minimal viable C# SDK for Circle's Developer-Controlled Wallets API, designed to support Entity Secret management and wallet set operations (create, get all, get by ID, update). This SDK is built for simplicity, robustness, and extensibility, targeting .NET 6.0.
+A minimal viable C# SDK for Circle's Developer-Controlled Wallets API, designed to support Entity Secret management and wallet set operations (create, get all, get by ID, update). This SDK is built for simplicity, robustness, and extensibility, targeting .NET 9.0.
 
 ## Table of Contents
 
@@ -61,7 +61,7 @@ The CircleDeveloperControlledWalletSDK simplifies interactions with the Circle P
 
 ## Prerequisites
 
-- **NET SDK**: Version 6.0 or later.
+- **NET SDK**: Version 9.0 or later.
 - **Circle Sandbox API Key**: Obtain from the Circle Developer Console (format: `TEST_API_KEY:<key>:<secret>`).
 - **Development Environment**: Visual Studio, VS Code, or any .NET-compatible IDE.
 - **Dependencies** (auto-installed via NuGet):
@@ -131,6 +131,8 @@ Console.WriteLine($"Recovery File: entity_secret_recovery.json");
 ```
 
 **Output:** Confirmation of registration status (SUCCESS) and recovery file path.
+
+**⚠️ Warning:** This SDK doesn't support Entity Secret Cipher Text Registration yet. (We are sorting that out) for now, you manaully register your secret on Circle's Dashboard.
 
 **Notes:** The Entity Secret is required for operations like wallet creation and transactions. Store the recovery file securely.
 
